@@ -1,5 +1,13 @@
 # Rick and Morty Catalog
 
+---
+
+> [!NOTE]  
+> This project was created as an **exercise to learn React** and experiment with modern tooling like Vite and Tailwind v4.   
+> Feel free to explore my newer work at:  
+> **https://ramicbenjamin.github.io**
+---
+
 A clean, modern React application built to explore characters from the **Rick and Morty API**.  
 This project was created as a hands-on exercise for learning **React**, **Vite**, **Tailwind v4**, and component-driven UI design.
 
@@ -141,15 +149,6 @@ Each UI component uses Tailwind v4 classes via `@import "tailwindcss";` for a cl
 
 ### **4. Responsive Layout**
 Cards stack vertically on mobile and switch to a horizontal layout on larger screens.
-
----
-
-## 📌 Callout
-
-> [!NOTE]  
-> This project was created as an **exercise to learn React** and experiment with modern tooling like Vite and Tailwind v4.   
-> Feel free to explore my newer work at:  
-> **https://ramicbenjamin.github.io**
 
 ---
 
