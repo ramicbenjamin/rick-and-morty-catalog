@@ -1,73 +1,158 @@
-# React + TypeScript + Vite
+# Rick and Morty Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, modern React application built to explore characters from the **Rick and Morty API**.  
+This project was created as a hands-on exercise for learning **React**, **Vite**, **Tailwind v4**, and component-driven UI design.
 
-Currently, two official plugins are available:
+The app includes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 **Search with debounce**
+- 📄 **Pagination**
+- 🎨 **Custom-designed character cards**
+- 🖼️ **Skeleton loading states**
+- ⚡ **Vite + React + TypeScript**
+- 🌈 **Tailwind v4 styling**
+- 🔌 **Custom data-fetching hook (`useCharacters`)**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧭 Features
 
-## Expanding the ESLint configuration
+### ✔ Search Characters
+Type to filter characters by name. Search updates automatically after a short pause thanks to debouncing.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ✔ Pagination
+Browse the entire Rick & Morty character catalog page-by-page with clean, centered navigation controls.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### ✔ Status-Based Styling
+Characters are visibly tinted based on their status:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 🟢 Alive → subtle green tint
+- 🔴 Dead → subtle red tint
+- ⚪ Unknown → neutral tint
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### ✔ Detailed Character Cards
+Each card displays:
+
+- Image
+- Name
+- Status
+- Species
+- Gender
+- Type
+- Origin
+- Last known location
+
+### ✔ Skeleton Loaders
+While data loads, placeholder cards mimic the layout for a smooth, visually pleasing experience.
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+### **1. Clone the repository**
+
+```bash
+git clone https://github.com/ramicbenjamin/rick-and-morty-catalog.git
+cd rick-and-morty-catalog
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### **2. Install dependencies**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### **3. Start the development server**
+
+```bash
+npm run dev
+```
+
+Then visit:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 18**
+- **Vite**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Rick and Morty API**
+- **Custom hooks + modular components**
+
+---
+
+## 🧩 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── CharacterCard.tsx
+│   ├── CharacterList.tsx
+│   ├── Pagination.tsx
+│   ├── SearchBar.tsx
+│   ├── SkeletonCard.tsx
+│   ├── SkeletonList.tsx
+│
+├── hooks/
+│   └── useCharacters.ts
+│
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+---
+
+## 🧠 How It Works
+
+### **1. `useCharacters` hook**
+A custom React hook that manages:
+
+- Fetching paginated character data
+- Applying search filters
+- Handling loading + errors
+- Tracking total pages
+
+Example usage:
+
+```tsx
+const { characters, isLoading, totalPages, error } =
+  useCharacters(page, search);
+```
+
+### **2. Debounced Search**
+- `searchInput` updates immediately
+- `debouncedSearch` updates after 500ms
+- The hook refetches when `debouncedSearch` changes
+
+This reduces redundant API calls and improves UX.
+
+### **3. Tailwind UI Components**
+Each UI component uses Tailwind v4 classes via `@import "tailwindcss";` for a clean, modern, responsive design.
+
+### **4. Responsive Layout**
+Cards stack vertically on mobile and switch to a horizontal layout on larger screens.
+
+---
+
+## 📌 Callout
+
+> [!NOTE]  
+> This project was created as an **exercise to learn React** and experiment with modern tooling like Vite and Tailwind v4.   
+> Feel free to explore my newer work at:  
+> **https://ramicbenjamin.github.io**
+
+---
+
+## 📜 License
+
+MIT © 2025
