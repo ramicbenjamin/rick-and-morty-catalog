@@ -150,6 +150,9 @@ Each UI component uses Tailwind v4 classes via `@import "tailwindcss";` for a cl
 ### **4. Responsive Layout**
 Cards stack vertically on mobile and switch to a horizontal layout on larger screens.
 
+## 👁️ How It Looks
+<img width="1333" height="1276" alt="image" src="https://github.com/user-attachments/assets/c3b36f7a-a4fe-4481-bdd4-ced2c0755e17" />
+
 ---
 
 ## 📜 License
