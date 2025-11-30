@@ -3,7 +3,7 @@
 ---
 
 > [!NOTE]  
-> This project was created as an **exercise to learn React** and experiment with modern tooling like Vite and Tailwind v4.   
+> This project was created as an **exercise to work with React** and experiment with modern tooling like Vite and Tailwind v4.   
 > Feel free to explore my newer work at:  
 > **https://ramicbenjamin.github.io**
 ---
